@@ -3,10 +3,10 @@ module github.com/crhntr/muxt-template-module-no-tools-file
 go 1.24.0
 
 require (
-	github.com/crhntr/dom v0.1.0-dev.7
 	github.com/jackc/pgx/v5 v5.7.6
 	github.com/pressly/goose/v3 v3.25.0
 	github.com/stretchr/testify v1.11.1
+	github.com/typelate/dom v0.6.1
 )
 
 require (

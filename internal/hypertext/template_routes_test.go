@@ -6,9 +6,9 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/crhntr/dom/domtest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/typelate/dom/domtest"
 
 	"github.com/crhntr/muxt-template-module-no-tools-file/internal/database"
 	"github.com/crhntr/muxt-template-module-no-tools-file/internal/fake"
@@ -40,9 +40,9 @@ func TestTemplates(t *testing.T) {
 					require.NotNil(t, ctx)
 				}
 				assert.Equal(t, http.StatusOK, res.StatusCode)
-				doc := domtest.Response(t, res)
+				doc := domtest.ParseResponseDocument(t, res)
 				if links := doc.QuerySelectorAll(`ul#lists li a`); assert.Equal(t, 4, links.Length()) {
-					for el := range doc.QuerySelectorEach(`ul#lists li a`) {
+					for el := range doc.QuerySelectorSequence(`ul#lists li a`) {
 						assert.NotZero(t, el.TextContent())
 						assert.Regexp(t, regexp.MustCompile(`/list/\d+`), el.GetAttribute("href"))
 					}
