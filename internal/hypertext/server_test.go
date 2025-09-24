@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/crhntr/muxt-template-module-no-tools-file/internal/database"
-	"github.com/crhntr/muxt-template-module-no-tools-file/internal/fake"
-	"github.com/crhntr/muxt-template-module-no-tools-file/internal/hypertext"
+	"github.com/typelate/no-tools-example/internal/database"
+	"github.com/typelate/no-tools-example/internal/fake"
+	"github.com/typelate/no-tools-example/internal/hypertext"
 )
 
 func TestServer_Index(t *testing.T) {

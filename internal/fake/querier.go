@@ -5,7 +5,7 @@ import (
 	"context"
 	"sync"
 
-	"github.com/crhntr/muxt-template-module-no-tools-file/internal/database"
+	"github.com/typelate/no-tools-example/internal/database"
 )
 
 type Querier struct {

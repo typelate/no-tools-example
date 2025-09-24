@@ -10,8 +10,8 @@ import (
 
 	"github.com/jackc/pgx/v5"
 
-	"github.com/crhntr/muxt-template-module-no-tools-file/internal/database"
-	"github.com/crhntr/muxt-template-module-no-tools-file/internal/hypertext"
+	"github.com/typelate/no-tools-example/internal/database"
+	"github.com/typelate/no-tools-example/internal/hypertext"
 )
 
 func main() {

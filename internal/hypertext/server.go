@@ -5,7 +5,7 @@ import (
 	"embed"
 	"html/template"
 
-	"github.com/crhntr/muxt-template-module-no-tools-file/internal/database"
+	"github.com/typelate/no-tools-example/internal/database"
 )
 
 //go:embed templates/*.gohtml

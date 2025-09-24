@@ -1,4 +1,4 @@
-module github.com/crhntr/muxt-template-module-no-tools-file
+module github.com/typelate/no-tools-example
 
 go 1.24.0
 
