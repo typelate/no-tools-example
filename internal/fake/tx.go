@@ -845,28 +845,6 @@ func (fake *Tx) SendBatchReturnsOnCall(i int, result1 pgx.BatchResults) {
 func (fake *Tx) Invocations() map[string][][]interface{} {
 	fake.invocationsMutex.RLock()
 	defer fake.invocationsMutex.RUnlock()
-	fake.beginMutex.RLock()
-	defer fake.beginMutex.RUnlock()
-	fake.commitMutex.RLock()
-	defer fake.commitMutex.RUnlock()
-	fake.connMutex.RLock()
-	defer fake.connMutex.RUnlock()
-	fake.copyFromMutex.RLock()
-	defer fake.copyFromMutex.RUnlock()
-	fake.execMutex.RLock()
-	defer fake.execMutex.RUnlock()
-	fake.largeObjectsMutex.RLock()
-	defer fake.largeObjectsMutex.RUnlock()
-	fake.prepareMutex.RLock()
-	defer fake.prepareMutex.RUnlock()
-	fake.queryMutex.RLock()
-	defer fake.queryMutex.RUnlock()
-	fake.queryRowMutex.RLock()
-	defer fake.queryRowMutex.RUnlock()
-	fake.rollbackMutex.RLock()
-	defer fake.rollbackMutex.RUnlock()
-	fake.sendBatchMutex.RLock()
-	defer fake.sendBatchMutex.RUnlock()
 	copiedInvocations := map[string][][]interface{}{}
 	for key, value := range fake.invocations {
 		copiedInvocations[key] = value

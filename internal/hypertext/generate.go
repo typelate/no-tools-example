@@ -1,6 +1,6 @@
 package hypertext
 
-//go:generate muxt generate --receiver-static-type=Server --routes-func=TemplateRoutes
+//go:generate muxt generate --use-receiver-type=Server
 //go:generate counterfeiter -generate
 
 //counterfeiter:generate -o=../fake/server.go        --fake-name=Server       . RoutesReceiver

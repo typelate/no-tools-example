@@ -733,24 +733,6 @@ func (fake *Querier) UpdateTaskSetCompletedAtNowReturnsOnCall(i int, result1 dat
 func (fake *Querier) Invocations() map[string][][]interface{} {
 	fake.invocationsMutex.RLock()
 	defer fake.invocationsMutex.RUnlock()
-	fake.deleteListMutex.RLock()
-	defer fake.deleteListMutex.RUnlock()
-	fake.deleteTaskMutex.RLock()
-	defer fake.deleteTaskMutex.RUnlock()
-	fake.insertListMutex.RLock()
-	defer fake.insertListMutex.RUnlock()
-	fake.insertTaskMutex.RLock()
-	defer fake.insertTaskMutex.RUnlock()
-	fake.selectListMutex.RLock()
-	defer fake.selectListMutex.RUnlock()
-	fake.selectListsMutex.RLock()
-	defer fake.selectListsMutex.RUnlock()
-	fake.selectTasksForListMutex.RLock()
-	defer fake.selectTasksForListMutex.RUnlock()
-	fake.updateListMutex.RLock()
-	defer fake.updateListMutex.RUnlock()
-	fake.updateTaskSetCompletedAtNowMutex.RLock()
-	defer fake.updateTaskSetCompletedAtNowMutex.RUnlock()
 	copiedInvocations := map[string][][]interface{}{}
 	for key, value := range fake.invocations {
 		copiedInvocations[key] = value

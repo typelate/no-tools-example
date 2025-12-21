@@ -458,18 +458,6 @@ func (fake *Server) PostTaskReturnsOnCall(i int, result1 hypertext.PostTaskResul
 func (fake *Server) Invocations() map[string][][]interface{} {
 	fake.invocationsMutex.RLock()
 	defer fake.invocationsMutex.RUnlock()
-	fake.deleteListMutex.RLock()
-	defer fake.deleteListMutex.RUnlock()
-	fake.getListMutex.RLock()
-	defer fake.getListMutex.RUnlock()
-	fake.indexMutex.RLock()
-	defer fake.indexMutex.RUnlock()
-	fake.patchTaskCompleteMutex.RLock()
-	defer fake.patchTaskCompleteMutex.RUnlock()
-	fake.postListMutex.RLock()
-	defer fake.postListMutex.RUnlock()
-	fake.postTaskMutex.RLock()
-	defer fake.postTaskMutex.RUnlock()
 	copiedInvocations := map[string][][]interface{}{}
 	for key, value := range fake.invocations {
 		copiedInvocations[key] = value
