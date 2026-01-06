@@ -3,7 +3,7 @@ module github.com/typelate/no-tools-example
 go 1.25.0
 
 require (
-	github.com/jackc/pgx/v5 v5.7.6
+	github.com/jackc/pgx/v5 v5.8.0
 	github.com/pressly/goose/v3 v3.26.0
 	github.com/stretchr/testify v1.11.1
 	github.com/typelate/dom v0.7.1
