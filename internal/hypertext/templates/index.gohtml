@@ -19,10 +19,8 @@
 
 	<article>
 		<h1>Lists</h1>
-      {{- /* gotype:github.com/crhntr/muxt-template-module-todo/internal/hypertext.IndexData */ -}}
-
 		<ul id='lists'>
-	    {{- range .Lists}}
+	    {{- range .Result.Lists}}
 				<li><a href='/list/{{.ID}}'>{{.Name}}</a></li>
 	    {{end -}}
 		</ul>
@@ -32,7 +30,7 @@
 		<div hx-trigger='load' hx-get='/list/create'></div>
 	</article>
 </main>
-{{block "footer" 0}}
+{{block "footer" .}}
 <footer class='container'>
 	<ul>
 		<li>
@@ -44,6 +42,6 @@
 </body>
 </html>
 
-{{- define "GET /{$} Index(ctx)" -}}
-  {{template "index.gohtml" .}}
-{{- end -}}
+{{- define "GET /{$} Index(ctx)"}}
+  {{- template "index.gohtml" .}}
+{{- end}}
