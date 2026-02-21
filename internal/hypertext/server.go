@@ -8,10 +8,10 @@ import (
 	"github.com/typelate/no-tools-example/internal/database"
 )
 
-//go:embed templates/*.gohtml
+//go:embed *.gohtml
 var templateFiles embed.FS
 
-var templates = template.Must(template.ParseFS(templateFiles, "templates/*.gohtml"))
+var templates = template.Must(template.ParseFS(templateFiles, "*.gohtml"))
 
 type Server struct {
 	DBQuery database.Querier
