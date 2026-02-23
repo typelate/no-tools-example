@@ -1,16 +1,14 @@
 {{- define "task" -}}
-  {{- if not .CompletedAt.Valid -}}
-		<li data-task-id='{{.ID}}'
-		    style='display: flex; justify-content: space-between;'>
+	{{- if not .CompletedAt.Valid -}}
+		<li data-task-id='{{.ID}}' style='display: flex; justify-content: space-between;'>
 			<span>{{.Description}}</span>
 			<button hx-target='closest [data-task-id]' hx-patch='/task/{{.ID}}/complete'>Done</button>
 		</li>
 	{{- else -}}
-	  <li data-task-id='{{.ID}}'
-	      style='display: flex; justify-content: space-between;'
-	      data-tooltip='Completed at {{.CompletedAt.Time}}'>
-		  <span><s>{{.Description}}</s></span>
-	  </li>
+		<li
+			data-task-id='{{.ID}}'
+			style='display: flex; justify-content: space-between;'
+			data-tooltip='Completed at {{.CompletedAt.Time}}'><span><s>{{.Description}}</s></span></li>
 	{{- end -}}
 {{- end -}}
 
@@ -21,26 +19,29 @@
 {{- define "new task" -}}
 	<form hx-post='/tasks'>
 		<h2>New Task</h2>
-		<input type='hidden' name="ListID" value='{{.List.ID}}'>
-		<label id='list-description-input'>Description
+		<input
+			type='hidden'
+			name="ListID"
+			value='{{.List.ID}}'>
+		<label id='list-description-input'>
+			Description
 			<input type='text' name='Description'>
 		</label>
-      {{with .Error}}
-				<p class='warning'>{{.}}</p>
-      {{end}}
+		{{with .Error}}
+			<p class='warning'>{{.}}</p>
+		{{end}}
 		<div id='post-task-error'></div>
 		<input type='submit'>
 	</form>
 {{- end -}}
 
 {{define "POST /tasks PostTask(ctx, form)"}}
-  {{- if .Error -}}
-    {{- template "new task" . -}}
-  {{- else -}}
-    {{- template "new task" . -}}
-    <ul hx-swap-oob='beforeend: #tasks-list'>
-      {{- template "task" .Task -}}
-    </ul>
-  {{- end -}}
+	{{- if .Error -}}
+		{{- template "new task" . -}}
+	{{- else -}}
+		{{- template "new task" . -}}
+		<ul hx-swap-oob='beforeend: #tasks-list'>
+			{{- template "task" .Task -}}
+		</ul>
+	{{- end -}}
 {{end}}
-
