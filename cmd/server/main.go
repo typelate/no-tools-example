@@ -26,7 +26,7 @@ func main() {
 	if err := conn.Ping(context.Background()); err != nil {
 		log.Fatal(err)
 	}
-	if err := database.Migrate(*conn.Config()); err != nil {
+	if err := database.Migrate(startupCTX, *conn.Config()); err != nil {
 		log.Fatal(err)
 	}
 	srv := &hypertext.Server{
